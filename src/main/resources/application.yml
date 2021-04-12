@@ -1,0 +1,10 @@
+server:
+  port: @server.port@
+
+logging:
+  config: '@logging.config.path@'
+
+spring:
+  data:
+    mongodb:
+      uri: '@mongodb.uri@'
