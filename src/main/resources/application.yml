@@ -8,3 +8,6 @@ spring:
   data:
     mongodb:
       uri: '@mongodb.uri@'
+  profiles:
+    include:
+      - matchmaking

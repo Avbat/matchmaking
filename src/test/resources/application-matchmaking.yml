@@ -1,0 +1,31 @@
+matchmaking:
+  group-size: 3
+  compliance-indices:
+    - index: 1
+      skill-limit:
+        lowerBound: 1001
+        upperBound: 10000
+      latency-limit:
+        lowerBound: 0
+        upperBound: 100
+    - index: 2
+      skill-limit:
+        lowerBound: 1001
+        upperBound: 10000
+      latency-limit:
+        lowerBound: 101
+        upperBound: 1000
+    - index: 3
+      skill-limit:
+        lowerBound: 0
+        upperBound: 1000
+      latency-limit:
+        lowerBound: 0
+        upperBound: 100
+    - index: 4
+      skill-limit:
+        lowerBound: 0
+        upperBound: 1000
+      latency-limit:
+        lowerBound: 101
+        upperBound: 1000

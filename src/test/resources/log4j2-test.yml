@@ -1,0 +1,15 @@
+Configuration:
+  status: warn
+
+  Appenders:
+    Console:
+      name: console
+      target: SYSTEM_OUT
+      PatternLayout:
+        pattern: "%d{yyyy-MM-dd HH:mm:ss:SSS} %-3p %t %c{1}:%m%n"
+
+  Loggers:
+    Root:
+      level: INFO
+      AppenderRef:
+        - ref: console

@@ -1,0 +1,67 @@
+matchmaking:
+  group-size: '@group.size@'
+  compliance-indices:
+    - index: 1
+      skill-limit:
+        lowerBound: '@min.skill.1@'
+        upperBound: '@max.skill.1@'
+      latency-limit:
+        lowerBound: '@min.latency.1@'
+        upperBound: '@max.latency.1@'
+    - index: 2
+      skill-limit:
+        lowerBound: '@min.skill.2@'
+        upperBound: '@max.skill.2@'
+      latency-limit:
+        lowerBound: '@min.latency.2@'
+        upperBound: '@max.latency.2@'
+    - index: 3
+      skill-limit:
+        lowerBound: '@min.skill.3@'
+        upperBound: '@max.skill.3@'
+      latency-limit:
+        lowerBound: '@min.latency.3@'
+        upperBound: '@max.latency.3@'
+    - index: 4
+      skill-limit:
+        lowerBound: '@min.skill.4@'
+        upperBound: '@max.skill.4@'
+      latency-limit:
+        lowerBound: '@min.latency.4@'
+        upperBound: '@max.latency.4@'
+    - index: 5
+      skill-limit:
+        lowerBound: '@min.skill.5@'
+        upperBound: '@max.skill.5@'
+      latency-limit:
+        lowerBound: '@min.latency.5@'
+        upperBound: '@max.latency.5@'
+    - index: 6
+      skill-limit:
+        lowerBound: '@min.skill.6@'
+        upperBound: '@max.skill.6@'
+      latency-limit:
+        lowerBound: '@min.latency.6@'
+        upperBound: '@max.latency.6@'
+    - index: 7
+      skill-limit:
+        lowerBound: '@min.skill.7@'
+        upperBound: '@max.skill.7@'
+      latency-limit:
+        lowerBound: '@min.latency.7@'
+        upperBound: '@max.latency.7@'
+    - index: 8
+      skill-limit:
+        lowerBound: '@min.skill.8@'
+        upperBound: '@max.skill.8@'
+      latency-limit:
+        lowerBound: '@min.latency.8@'
+        upperBound: '@max.latency.8@'
+    - index: 9
+      skill-limit:
+        lowerBound: '@min.skill.9@'
+        upperBound: '@max.skill.9@'
+      latency-limit:
+        lowerBound: '@min.latency.9@'
+        upperBound: '@max.latency.9@'
+#   - index: (N)
