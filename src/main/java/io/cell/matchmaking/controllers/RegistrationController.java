@@ -1,8 +1,8 @@
 package io.cell.matchmaking.controllers;
 
 import io.cell.matchmaking.model.Participant;
-import io.cell.matchmaking.services.ParticipantService;
 import io.cell.matchmaking.services.RegistrationResult;
+import io.cell.matchmaking.services.RegistrationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -11,11 +11,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class RegistrationController {
 
-    private ParticipantService participantService;
+    private RegistrationService registrationService;
 
     @Autowired
-    public RegistrationController(ParticipantService participantService) {
-        this.participantService = participantService;
+    public RegistrationController(RegistrationService registrationService) {
+        this.registrationService = registrationService;
     }
 
     @PostMapping("/users")
@@ -26,6 +26,6 @@ public class RegistrationController {
                 .setName(name)
                 .setSkill(skill)
                 .setLatency(latency);
-        return participantService.register(registered);
+        return registrationService.register(registered);
     }
 }

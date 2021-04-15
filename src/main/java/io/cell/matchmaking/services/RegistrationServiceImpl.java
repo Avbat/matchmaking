@@ -11,21 +11,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
 import static io.cell.matchmaking.services.RegistrationStatuses.*;
 
 @Service
-public class ParticipantServiceImpl implements ParticipantService {
+public class RegistrationServiceImpl implements RegistrationService {
 
-    private static final Logger LOG = LogManager.getLogger(ParticipantService.class);
+    private static final Logger LOG = LogManager.getLogger(RegistrationService.class);
     private ParticipantRegistrationRepository registrationRepository;
     private ParticipantVerifier verifier;
 
     @Autowired
-    public ParticipantServiceImpl(ParticipantRegistrationRepository registrationRepository,
-                                  ParticipantVerifier verifier) {
+    public RegistrationServiceImpl(ParticipantRegistrationRepository registrationRepository,
+                                   ParticipantVerifier verifier) {
         this.registrationRepository = registrationRepository;
         this.verifier = verifier;
     }
@@ -40,6 +41,24 @@ public class ParticipantServiceImpl implements ParticipantService {
             return createErrorResult(errorMessage);
         }
         return recording(participant);
+    }
+
+    @Override
+    public List<RegistrationRecord> getWaitingParticipant() {
+        return registrationRepository.getAllByTeamIsNull();
+    }
+
+    @Override
+    public Long getCurrentTeam() {
+        return registrationRepository.getByTeamNotNullOrderByTeamDesc()
+                .map(RegistrationRecord::getTeam)
+                .orElse(0L);
+    }
+
+    @Override
+    public void updateTeam(List<RegistrationRecord> records, Long team) {
+        records.forEach(record -> record.setTeam(team));
+        registrationRepository.saveAll(records);
     }
 
     private RegistrationResult recording(Participant participant) {

@@ -1,4 +1,4 @@
-package io.cell.matchmaking.matchmaking;
+package io.cell.matchmaking.matchmaking.index;
 
 import io.cell.matchmaking.model.Participant;
 

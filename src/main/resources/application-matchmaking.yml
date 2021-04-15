@@ -1,5 +1,6 @@
 matchmaking:
   group-size: '@group.size@'
+  pool-processing-delay: '@pool.processing.delay@'
   compliance-indices:
     - index: 1
       skill-limit:

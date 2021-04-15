@@ -1,21 +1,27 @@
 package io.cell.matchmaking.matchmaking;
 
+import io.cell.matchmaking.matchmaking.index.ConfiguredIndexManager;
 import io.cell.matchmaking.model.Participant;
+import io.cell.matchmaking.services.RegistrationService;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.stream.Stream;
 
-import static io.cell.matchmaking.matchmaking.ConfiguredIndexManager.DEFAULT_INDEX;
+import static io.cell.matchmaking.matchmaking.index.ConfiguredIndexManager.DEFAULT_INDEX;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
 @RunWith(SpringRunner.class)
+@MockBean(ParticipantPool.class)
+@MockBean(RegistrationService.class)
+@MockBean(TeamFactory.class)
 class ConfiguredIndexManagerTest {
 
     @Autowired
