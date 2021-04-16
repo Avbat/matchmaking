@@ -15,5 +15,5 @@ public interface ParticipantRegistrationRepository extends MongoRepository<Regis
 
     List<RegistrationRecord> getAllByTeamIsNull();
 
-    Optional<RegistrationRecord> getByTeamNotNullOrderByTeamDesc();
+    Optional<RegistrationRecord> getFirstByTeamIsNotNullOrderByTeamDesc();
 }

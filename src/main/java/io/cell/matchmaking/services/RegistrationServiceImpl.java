@@ -50,7 +50,7 @@ public class RegistrationServiceImpl implements RegistrationService {
 
     @Override
     public Long getCurrentTeam() {
-        return registrationRepository.getByTeamNotNullOrderByTeamDesc()
+        return registrationRepository.getFirstByTeamIsNotNullOrderByTeamDesc()
                 .map(RegistrationRecord::getTeam)
                 .orElse(0L);
     }

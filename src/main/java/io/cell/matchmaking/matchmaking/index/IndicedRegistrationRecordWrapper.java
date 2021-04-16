@@ -43,7 +43,7 @@ public class IndicedRegistrationRecordWrapper implements Comparable<IndicedRegis
         if (this.index.equals(o.index)) {
             if (this.record.getParticipant().getSkill().equals(o.getRecord().getParticipant().getSkill())) {
                 if (this.record.getParticipant().getLatency().equals(o.getRecord().getParticipant().getLatency())) {
-                    return 0;
+                    return 1;
                 }
                 return  this.record.getParticipant().getLatency() - o.getRecord().getParticipant().getLatency() > 0 ? 1 : -1;
             }
